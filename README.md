@@ -47,3 +47,8 @@ mount /dev/md0 /mnt/my_drive
 mdadm --grow /dev/md0 --level=0 --raid-devices=3 --add /dev/sda
 ```
 
+And resize the filesystem
+
+```
+resize2fs /dev/md0
+```
