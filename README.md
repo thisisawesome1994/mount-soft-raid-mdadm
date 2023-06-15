@@ -43,6 +43,15 @@ mount /dev/md0 /mnt/my_drive
 
 8. Optional: Add drives to existing Raid0
 
+Increase speed
+
+```
+echo 100000 > /proc/sys/dev/raid/speed_limit_min 
+echo 200000 > /proc/sys/dev/raid/speed_limit_max
+```
+
+Add 1 drive to raid0
+
 ```
 mdadm --grow /dev/md0 --level=0 --raid-devices=3 --add /dev/sda
 ```
