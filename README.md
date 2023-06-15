@@ -40,3 +40,10 @@ mount /dev/md0 /mnt/my_drive
 ```
 /dev/md0        /mnt/my_drive        ext4    defaults        0 0
 ```
+
+8. Optional: Add drives to existing Raid0
+
+```
+mdadm --grow /dev/md0 --level=0 --raid-devices=3 --add /dev/sda
+```
+
